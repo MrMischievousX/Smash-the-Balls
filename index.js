@@ -249,8 +249,7 @@ function animate() {
   enemies.forEach((enemy, index) => {
     enemy.update();
     if (
-      Math.hypot(enemy.x - player.x, enemy.y - player.y) -
-        player.size -
+      Math.hypot(enemy.x - player.x, enemy.y - player.y)  -
         enemy.radius <
       -1
     ) {
