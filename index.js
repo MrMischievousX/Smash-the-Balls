@@ -53,7 +53,7 @@ class Player {
 
   update() {
     this.draw();
-    if (mouse.x < innerWidth - 100 && mouse.x > 0) {
+    if (mouse.x < innerWidth - 50 && mouse.x > 0) {
       this.x = mouse.x;
     }
     if (this.y > innerHeight - 50) {
