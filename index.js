@@ -201,22 +201,32 @@ function play() {
 
 function spawnEnemies() {
   setInterval(() => {
-    console.log("Enemies");
-    let radius = randomIntFromRange(min, max);
+    if (run) {
+      console.log("Enemies");
+      let radius = randomIntFromRange(min, max);
 
-    let velocity = {
-      x: 0,
-      y: 0,
-    };
+      let velocity = {
+        x: 0,
+        y: 0,
+      };
 
-    let x = 20;
-    let y = Math.random() * 200 + 100;
-    velocity.x = Math.random() * 3 + radius / 50;
-    velocity.y = Math.random() * 3 + radius / 100;
+      let x = 20;
+      let y = Math.random() * 200 + 100;
+      velocity.x = Math.random() * 3 + radius / 50;
+      velocity.y = Math.random() * 3 + radius / 100;
 
-    enemies.push(
-      new Enemies(x, y, radius, `hsl(${Math.random() * 360},50%,50%)`, velocity)
-    );
+      enemies.push(
+        new Enemies(
+          x,
+          y,
+          radius,
+          `hsl(${Math.random() * 360},50%,50%)`,
+          velocity
+        )
+      );
+    } else {
+      return;
+    }
   }, spawnTym);
 }
 
